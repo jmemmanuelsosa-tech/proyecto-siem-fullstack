@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de autenticación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Tarjeta centrada solo para Login y Registro -->
+    <div class="card">
+        <h2>Iniciar Sesión</h2>
+        <div id="mensaje-alerta"></div>
+
+        <!-- Formulario de Login -->
+        <form id="form-login">
+            <label for="input-usuario">Usuario:</label>
+            <input type="text" id="input-usuario" required>
+
+            <label for="input-pass">Contraseña</label>
+            <input type="password" id="input-pass" required>
+
+            <button type="submit">Ingresar</button>
+            <br><br>
+            <p>¿No tenés cuenta? <a href="#" id="irRegistro">Registrate aquí</a></p>
+        </form>
+
+        <!-- Formulario de Registro -->
+        <form id="registroForm" style="display: none;">
+            <h2>Registrarse</h2>
+
+            <label>Nombre de usuario:</label>
+            <input type="text" id="reg-usuario" required>
+
+            <label>Nombre:</label>
+            <input type="text" id="reg-nombre" required>
+
+            <label>Apellido:</label>
+            <input type="text" id="reg-apellido" required>
+
+            <label>Email:</label>
+            <input type="email" id="reg-email" required>
+
+            <label>Contraseña:</label>
+            <input type="password" id="reg-pass" required>
+
+            <button type="submit">Registrarme</button>
+            <br><br>
+            <p><a href="#" id="irLogin">¿Ya tenés cuenta? Inicia sesión</a></p>
+        </form>
+    </div>
+
+<!-- Panel de Logs (FUERA de la card para ancho completo) -->
+<div id="panel-logs" style="display: none;">
+    <div class="header-dashboard">
+        <h2>Eventos y Logs de Seguridad (SOC)</h2>
+        <button id="btn-logout" class="btn-danger">Cerrar Sesión</button>
+    </div>
+
+    <!-- TARJETAS DE MÉTRICAS (KPIs) -->
+    <div class="kpi-container">
+        <div class="kpi-card">
+            <h3>Total de Eventos</h3>
+            <p id="kpi-total">0</p>
+        </div>
+        <div class="kpi-card kpi-warning">
+            <h3>Logins Fallidos</h3>
+            <p id="kpi-fallidos">0</p>
+        </div>
+        <div class="kpi-card kpi-danger">
+            <h3>Amenazas Detectadas</h3>
+            <p id="kpi-amenazas">0</p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>IP Origen</th>
+                <th>Resultado</th>
+                <th>Detalle/Error</th>
+                <th>Fecha y hora</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-logs-body"></tbody>
+    </table>
+</div>
+
+    <script src="app.js"></script>
+</body>
+</html>

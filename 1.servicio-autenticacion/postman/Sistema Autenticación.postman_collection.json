@@ -1,0 +1,170 @@
+{
+  "info": {
+    "_postman_id": "1f33e149-1be2-470c-ba93-79ed70bf6fdb",
+    "name": "Sistema Autenticación",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57021648",
+    "_collection_link": "https://go.postman.co/collection/57021648-1f33e149-1be2-470c-ba93-79ed70bf6fdb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Registro de Usuario",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"carlostest\",\r\n  \"nombreUsuario\": \"carlostest\",\r\n  \"nombre\": \"Carlos\",\r\n  \"apellido\": \"Test\",\r\n  \"email\": \"carlostest@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"contrasena\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/auth/registro",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "auth",
+            "registro"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"emmanuelsosap\",\r\n  \"password\": \"12345\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Login",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"emmanuelsosap\",\r\n  \"password\": \"12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Thu, 30 Jul 2026 15:57:33 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 4,\n    \"nombreUsuario\": \"emmanuelsosap\",\n    \"apellido\": \"sosa\",\n    \"email\": \"sosapapu@gmail.com\",\n    \"activo\": true,\n    \"roles\": [\n        \"ROLE_USER\"\n    ],\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hbnVlbHNvc2FwIiwiaWF0IjoxNzg1NDI3MDUzLCJleHAiOjE3ODU0NjMwNTN9.FBKLr3FGHXbscqGr-jSqZTwcwLQiUokYl681jm1NJFg\"\n}"
+        }
+      ]
+    }
+  ]
+}
