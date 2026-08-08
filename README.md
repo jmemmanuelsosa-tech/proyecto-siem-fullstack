@@ -61,3 +61,16 @@ Crear la base de datos e insertar el rol por defecto en MySQL / phpMyAdmin:
 CREATE DATABASE db_autenticacion;
 USE db_autenticacion;
 INSERT INTO roles (id, nombre_rol) VALUES (1, 'ROLE_USER');
+
+## Ejecución con Docker
+
+Este servicio está contenedorizado para facilitar su despliegue y asegurar la consistencia del entorno.
+
+### Requisitos previos
+- Docker Desktop instalado y en ejecución.
+
+### Instrucciones para levantar el microservicio
+
+1. **Construir la imagen Docker:**
+   ```bash
+   docker build --load -t mi-backend-siem .
